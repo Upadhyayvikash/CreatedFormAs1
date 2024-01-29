@@ -120,7 +120,7 @@
 
 <body>
     <h1>Welcome to the best form on Internet!</h1>
-    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+    <form id="form" name="myForm" onsubmit="return validateForm()" method="post">
         <div class="formdesign" id="name">
             Name: <input type="text" name="fname" placeholder="Enter user Name"><b><span class="formerror"> </span></b>
         </div>
@@ -208,7 +208,21 @@ if (cpassword != password){
 
 return returnval;
 }
+ form.addEventListener('Submit', function(event){
+    event.preventDefault()
 
+    var name = document.getElementById('name').value
+    
+    console.log(name)
+
+    var email = document.getElementById('email').value
+
+    console.log(email)
+
+    var phone = document.getElementById('phone').value
+
+    console.log(phone)
+ })
 </script>
 
 </html>
