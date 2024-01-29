@@ -114,6 +114,14 @@
         font-size: 25px;
         margin: 22px 20px;
     }
+    #output {
+        margin-top: 22px;
+        background-color: blue;
+        color: red;
+        padding: 5px;
+        margin: auto;
+        width: 200px;
+      }
 </style>
 
 </head>
@@ -144,6 +152,7 @@
         <input class="but" type="submit" value="Submit">
 
     </form>
+    <div id="output"></div>
 </body>
 <script>
 
@@ -205,24 +214,13 @@ if (cpassword != password){
     seterror("cpass", "*Password and Confirm password should match!");
     returnval = false;
 }
+var outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = "<p>Hello user " + "your name is " + name + "your email is " + email + "your phone number is " + phone + "!<p/>";
 
 return returnval;
+
 }
- form.addEventListener('Submit', function(event){
-    event.preventDefault()
-
-    var name = document.getElementById('name').value
-    
-    console.log(name)
-
-    var email = document.getElementById('email').value
-
-    console.log(email)
-
-    var phone = document.getElementById('phone').value
-
-    console.log(phone)
- })
+ 
 </script>
 
 </html>
