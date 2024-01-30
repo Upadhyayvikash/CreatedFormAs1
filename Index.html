@@ -116,11 +116,13 @@
     }
     #output {
         margin-top: 22px;
-        background-color: blue;
-        color: red;
+        background-color: red;
+        color: white;
         padding: 5px;
         margin: auto;
-        width: 200px;
+        width: 80%;
+        height: 50%;
+        font-size: 22px;
       }
 </style>
 
@@ -190,7 +192,7 @@ if (name.length == 0){
 }
 
 var email = document.forms['myForm']["femail"].value;
-if (email.length>15){
+if (email.length>20){
     seterror("email", "*Email length is too long");
     returnval = false;
 }
@@ -214,10 +216,14 @@ if (cpassword != password){
     seterror("cpass", "*Password and Confirm password should match!");
     returnval = false;
 }
-var outputDiv = document.getElementById("output");
-      outputDiv.innerHTML = "<p>Hello user " + "your name is " + name + "your email is " + email + "your phone number is " + phone + "!<p/>";
 
-return returnval;
+if(returnval){
+    var outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = "<p>Hello user " + "your name is " + name + " your email is " + email + " your phone number is " + phone + "!<p/>";
+
+}
+
+return false;
 
 }
  
